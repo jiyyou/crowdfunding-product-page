@@ -1,8 +1,32 @@
+@font-face {
+  font-family: "Commissioner";
+  src: url("./Commisioner/static/Commissioner-Regular.ttf");
+  font-weight: 400;
+}
+@font-face {
+  font-family: "Commissioner";
+  src: url("./Commisioner/static/Commmissioner-Medium.ttf");
+  font-weight: 500;
+}
+@font-face {
+  font-family: "Commissioner";
+  src: url("./Commisioner/static/Commissioner-Bold.ttf");
+  font-weight: 700;
+}
+html {
+  box-sizing: border-box;
+}
+
+*, *:before, *:after {
+  box-sizing: inherit;
+}
+
 * {
   list-style-type: none;
   text-decoration: none;
   padding: 0;
   margin: 0;
+  font-family: "Commissioner";
 }
 
 header {
@@ -44,8 +68,8 @@ main {
   justify-content: space-between;
   position: absolute;
   top: -60px;
-  max-width: calc(100% - 100px);
-  height: 200px;
+  max-width: calc(100% - 50px);
+  height: 270px;
   padding: 40px 25px;
 }
 .floatingMain__logo {
@@ -67,11 +91,40 @@ main {
 .progress {
   border-radius: 10px;
   background-color: white;
-  padding: 30px 25px;
+  padding: 0 25px 25px 25px;
   margin-bottom: 30px;
+}
+.progress__section {
+  position: relative;
+  padding: 30px 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.progress__hr {
+  width: 20%;
+  position: relative;
+  bottom: 0;
+  left: 40%;
 }
 .progress__label {
   color: grey;
+}
+.progress__bar {
+  width: 100%;
+  background-color: #F2F5F8;
+  height: 15px;
+  border-radius: 50px;
+  position: relative;
+}
+.progress__barfill {
+  position: absolute;
+  left: 0;
+  border-radius: 50px;
+  width: 89%;
+  height: 15px;
+  background-color: #3cb4ac;
 }
 
 .about {
@@ -84,6 +137,7 @@ main {
 }
 .about__description {
   margin-bottom: 20px;
+  color: grey;
 }
 
 .pledgeCard {
@@ -92,8 +146,12 @@ main {
   padding: 25px;
   margin-bottom: 25px;
 }
+.pledgeCard--soldout {
+  opacity: 0.4;
+}
 .pledgeCard__title {
   margin-bottom: 10px;
+  font-family: "Commissioner";
 }
 .pledgeCard__subtitle {
   color: #3cb4ac;
@@ -104,6 +162,16 @@ main {
 }
 .pledgeCard__stock {
   margin-bottom: 25px;
+  display: flex;
+  align-items: center;
+  color: grey;
+}
+.pledgeCard__number {
+  color: black;
+  font-weight: bold;
+  font-size: 30px;
+  display: inline-block;
+  margin-right: 10px;
 }
 
 .button {
@@ -120,13 +188,25 @@ main {
   width: 140px;
   height: 45px;
 }
-
-.backModal {
-  display: none;
+.button--soldout {
+  background-color: silver;
 }
 
-.successModal {
+.modal {
   display: none;
+  background-color: rgba(0, 0, 0, 0.4);
+  padding: 30px 25px;
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+}
+.modal--active {
+  display: flex;
+}
+.modal__card {
+  background-color: white;
+  border-radius: 10px;
 }
 
 /*# sourceMappingURL=index.css.map */

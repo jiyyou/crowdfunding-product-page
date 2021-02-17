@@ -1,13 +1,34 @@
 $moderateCyan: hsl(176, 50%, 47%);
 $darkCyan: hsl(176, 72%, 28%);
 
+@font-face {
+	font-family: 'Commissioner';
+	src: url("./Commisioner/static/Commissioner-Regular.ttf");
+	font-weight: 400;
+}
+@font-face {
+	font-family: 'Commissioner';
+	src: url("./Commisioner/static/Commmissioner-Medium.ttf");
+	font-weight: 500;
+}
+@font-face {
+	font-family: 'Commissioner';
+	src: url("./Commisioner/static/Commissioner-Bold.ttf");
+	font-weight: 700;
+}
+html {
+	box-sizing: border-box;
+}
+*, *:before, *:after {
+	box-sizing: inherit;
+}
 * {
 	list-style-type: none;
 	text-decoration: none;
 	padding: 0;
 	margin: 0;
+	font-family: 'Commissioner';
 }
-
 header {
 	background-image: url('./images/image-hero-mobile.jpg');
 	background-position: center;
@@ -47,8 +68,8 @@ main {
 	justify-content: space-between;
 	position: absolute;
 	top: -60px;
-	max-width: calc(100% - 100px);
-	height: 200px;
+	max-width: calc(100% - 50px);
+	height: 270px;
 	padding: 40px 25px;
 	&__logo {
 		position: absolute;
@@ -70,10 +91,21 @@ main {
 .progress {
 	border-radius: 10px;
 	background-color: white;
-	padding: 30px 25px;
+	padding: 0 25px 25px 25px;
 	margin-bottom: 30px;
 	&__section {
-
+		position: relative;
+		padding: 30px 0;
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		align-items: center;
+	}
+	&__hr {
+		width: 20%;
+		position: relative;
+		bottom: 0;
+		left: 40%;
 	}
 	&__money {
 
@@ -83,6 +115,21 @@ main {
 	}
 	&__label {
 		color: grey;
+	}
+	&__bar {
+		width: 100%;
+		background-color: #F2F5F8;
+		height: 15px;
+		border-radius: 50px;
+		position: relative;
+	}
+	&__barfill {
+		position: absolute;
+		left: 0;
+		border-radius: 50px;
+		width: 89%;
+		height: 15px;
+		background-color: $moderateCyan;
 	}
 }
 
@@ -95,6 +142,7 @@ main {
 	}
 	&__description {
 		margin-bottom: 20px;
+		color: grey;
 	}
 }
 
@@ -103,8 +151,12 @@ main {
 	border: 1px solid silver;
 	padding: 25px;
 	margin-bottom: 25px;
+	&--soldout {
+		opacity: 0.4;
+	}
 	&__title {
 		margin-bottom: 10px;
+		font-family: 'Commissioner';
 	}
 	&__subtitle {
 		color: $moderateCyan;
@@ -115,6 +167,16 @@ main {
 	}
 	&__stock {
 		margin-bottom: 25px;
+		display: flex;
+		align-items: center;
+		color: grey;
+	}
+	&__number {
+		color: black;
+		font-weight: bold;
+		font-size: 30px;
+		display: inline-block;
+		margin-right: 10px;
 	}
 }
 
@@ -131,12 +193,24 @@ main {
 		width: 140px;
 		height: 45px;
 	}
+	&--soldout {
+		background-color: silver;
+	}
 }
 
-.backModal {
+.modal {
 	display: none;
-}
-
-.successModal {
-	display: none;
+	background-color: rgba(0,0,0,0.4);
+	padding: 30px 25px;
+	position: absolute;
+	top: 0;
+	left: 0;
+	height: 100%;
+	&--active {
+		display: flex;
+	}
+	&__card {
+		background-color: white;
+		border-radius: 10px;
+	}
 }
