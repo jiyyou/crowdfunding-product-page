@@ -1,5 +1,132 @@
+* {
+  list-style-type: none;
+  text-decoration: none;
+  padding: 0;
+  margin: 0;
+}
+
 header {
   background-image: url("./images/image-hero-mobile.jpg");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 260px;
+  padding: 30px 25px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.logo {
+  width: 128px;
+  height: 20px;
+}
+
+.hamburger {
+  width: 15px;
+  height: 14px;
+}
+
+.header__modal {
+  display: none;
+}
+
+main {
+  padding: 250px 25px 100px 25px;
+  background-color: #F2F5F8;
+  position: relative;
+}
+
+.floatingMain {
+  border-radius: 10px;
+  background-color: white;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  position: absolute;
+  top: -60px;
+  max-width: calc(100% - 100px);
+  height: 200px;
+  padding: 40px 25px;
+}
+.floatingMain__logo {
+  position: absolute;
+  top: -28px;
+  left: calc(50% - 28px);
+}
+.floatingMain__title {
+  text-align: center;
+}
+.floatingMain__description {
+  text-align: center;
+}
+.floatingMain__book {
+  width: 56px;
+  height: 56px;
+}
+
+.progress {
+  border-radius: 10px;
+  background-color: white;
+  padding: 30px 25px;
+  margin-bottom: 30px;
+}
+.progress__label {
+  color: grey;
+}
+
+.about {
+  border-radius: 10px;
+  background-color: white;
+  padding: 30px 25px;
+}
+.about__title {
+  margin-bottom: 20px;
+}
+.about__description {
+  margin-bottom: 20px;
+}
+
+.pledgeCard {
+  border-radius: 10px;
+  border: 1px solid silver;
+  padding: 25px;
+  margin-bottom: 25px;
+}
+.pledgeCard__title {
+  margin-bottom: 10px;
+}
+.pledgeCard__subtitle {
+  color: #3cb4ac;
+}
+.pledgeCard__description {
+  color: grey;
+  margin: 25px 0;
+}
+.pledgeCard__stock {
+  margin-bottom: 25px;
+}
+
+.button {
+  background-color: #3cb4ac;
+  color: white;
+  border: none;
+  border-radius: 50px;
+}
+.button--back {
+  width: 200px;
+  height: 56px;
+}
+.button--select {
+  width: 140px;
+  height: 45px;
+}
+
+.backModal {
+  display: none;
+}
+
+.successModal {
+  display: none;
 }
 
 /*# sourceMappingURL=index.css.map */
